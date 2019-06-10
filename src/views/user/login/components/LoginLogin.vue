@@ -15,6 +15,8 @@
 
 <script>
 // @ is an alias to /src
+// import md5 from "js-md5";
+// import axios from "axios";
 
 export default {
   name: 'loginlogin',
@@ -25,6 +27,31 @@ export default {
       psw: ""
     };
   },
+    methods :{
+        loginSubmit() {
+            this.$router.push('home')
+            // console.log(this.name);
+            // console.log(this.psw);
+            // console.log({
+            //     account: this.name,
+            //     agentPwd: md5("agent" + this.psw)
+            // });
+            // axios
+            //     .post("http://192.168.101.123:8899/ysscale/web/agent/login/login", {
+            //         account: this.name,
+            //         agentPwd: md5("agent" + this.psw)
+            //     })
+            //     .then(res => {
+            //         console.log("cheeng");
+            //         console.log(res);
+            //         this.$router.push({ name: "Home", params: {} });
+            //     })
+            //     .catch(err => {
+            //         console.log("shibai");
+            //         console.log(err);
+            //     });
+        }
+    }
 }
 </script>
 <style lang="stylus" scoped>

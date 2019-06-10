@@ -1,5 +1,5 @@
 <template>
-  <div class = 'wrapper'>
+  <div class="wrapper">
     <div>
       <span>用户名</span>
       <input type="text" placeholder="请输入用户名" v-model="userName">
@@ -15,7 +15,7 @@
     <div>
       <input type="text"  placeholder="请输入验证码" v-model="verificationCode">
     </div>
-    <div>
+    <div class="router-wrapper">
       <div @click="clear">清空</div>
       <div @click="cancle">取消</div>
     </div>
@@ -27,7 +27,7 @@
 import axios from "axios";
 
 export default {
-  name: "RegisterRegister",
+  name: "ForgetPasswordForgetPassword",
   data() {
     return {
       userName: "",
@@ -41,7 +41,7 @@ export default {
   methods: {
     getMsgCode() {
       axios
-        .post("http://192.168.101.123:8899/ysscale/web/agent/login/getMsgCode", {
+        .post("http://192.168.101.123:8899/ysscale/web/agent/login/getMsgRestCode", {
           account: this.userName,
           msgId: ''
         })
@@ -57,7 +57,7 @@ export default {
     },
     submitRegister(){
       axios
-        .post("http://192.168.101.123:8899/ysscale/web/agent/login/register", {
+        .post("http://192.168.101.123:8899/ysscale/web/agent/login/getMsgRestCode", {
           account: this.userName,
           msgCode: this.msgCode,
           msgId: this.msgId,
@@ -89,6 +89,27 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.wrapper
-  display flex
+  .wrapper
+    position relative
+    display flex
+    flex-direction column
+    justify-content start
+    width 400px
+    height 500px
+    border 1px solid #666
+    margin 0 auto
+    padding 0 10px
+    margin-top 20px
+    font-size 24px
+    .input-item
+      height 30px
+      margin 10px 0
+      padding 0 10px
+      border 1px solid #666
+    .router-wrapper
+      display flex
+      height 30px
+      margin 10px 0
+      padding 0 10px
+      justify-content space-between
 </style>
