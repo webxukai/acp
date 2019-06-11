@@ -9,6 +9,7 @@
         </div>
 
       <button class="login-button" @click="loginSubmit">登录</button>
+      <button class="login-button" @click="noLoginSubmit">游客登录</button>
     </div>
   </div>
 </template>
@@ -50,6 +51,9 @@ export default {
             //         console.log("shibai");
             //         console.log(err);
             //     });
+        },
+        noLoginSubmit(){
+            this.$router.push('home')
         }
     }
 }
@@ -66,16 +70,25 @@ export default {
   margin 0 auto
   padding 0 10px
   margin-top 20px
-  font-size 24px
+  font-weight: 400;
+  color: #e95098
+  font-size: 18px;
   .input-item
     height 30px
     margin 10px 0
     padding 0 10px
     border 1px solid #666 
+	&:placeholder
+	  color #e95098
   .router-wrapper
     display flex
     height 30px
     margin 10px 0
     padding 0 10px
     justify-content space-between
+	.router-item
+	  color #e95098
+	.login-button
+	  color #e95098
+	  margin 10px 0
 </style>
