@@ -1,20 +1,22 @@
 <template>
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-submenu index="2">
-            <template slot="title">我的工作台</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-submenu index="2-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="2-4-1">选项1</el-menu-item>
-                <el-menu-item index="2-4-2">选项2</el-menu-item>
-                <el-menu-item index="2-4-3">选项3</el-menu-item>
-            </el-submenu>
+
+
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" active-text-color = "#e95098">
+        <router-link to="/home">
+            <img class="img-logo" src="../../../../assets/logo.png" />
+        </router-link>
+        <el-menu-item index="1"> <router-link to="/home">ACP首页</router-link> </el-menu-item>
+        <el-menu-item index="2"> <router-link to="/store">ACP商城</router-link> </el-menu-item>
+        <el-menu-item index="3"> <router-link to="/community">用户社区</router-link></el-menu-item>
+        <el-menu-item index="4"> <router-link to="/dynamic">ACP动态</router-link></el-menu-item>
+        <el-submenu index="5">
+            <template slot="title"> 全部游戏</template>
+            <el-menu-item index="2-1"> <router-link to="/register">五子棋</router-link></el-menu-item>
+            <el-menu-item index="2-2"> <router-link to="/register">贪吃蛇</router-link></el-menu-item>
+            <el-menu-item index="2-3"> <router-link to="/register">你画我猜</router-link></el-menu-item>
         </el-submenu>
-        <el-menu-item index="3" disabled>消息中心</el-menu-item>
-        <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+        <el-menu-item index="6" > <router-link to="/consultation">咨询服务</router-link></el-menu-item>
+        <el-menu-item index="7" > <router-link to="/about">关于ACP</router-link></el-menu-item>
     </el-menu>
 </template>
 
@@ -34,5 +36,13 @@
     }
 </script>
 <style lang="stylus" scoped>
+    .el-menu
+        /*float right*/
+        width 100%
+        .el-menu-item,.el-submenu
+            float right
+        .img-logo
+            width:80px
+            height:80px
 
 </style>

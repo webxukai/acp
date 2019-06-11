@@ -5,6 +5,12 @@ import Login from './views/user/login/Login.vue'
 import Register from './views/user/register/Register.vue'
 import ForgetPassword from './views/user/forgetPassword/ForgetPassword.vue'
 
+import Store from './views/ACPstore/store/Store.vue'
+import About from './views/AboutACP/about/About.vue'
+import Community from './views/community/community/Community.vue'
+import Consultation from './views/consultationService/consultation/Consultation.vue'
+import Dynamic from './views/dynamicState/dynamic/Dynamic.vue'
+
 import Home from './views/home/home/Home'
 
 Vue.use(Router)
@@ -31,8 +37,36 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: '/store',
+          name: 'store',
+          component: Store
+        },
+        {
+          path: '/about',
+          name: 'about',
+          component: About
+        },
+        {
+          path: '/community',
+              name: 'community',
+          component: Community
+        },
+        {
+          path: '/consultation',
+          name: 'consultation',
+          component: Consultation
+        },
+        {
+          path: '/dynamic',
+          name: 'dynamic',
+          component: Dynamic
+        }
+      ]
     },
+
     // {
     //   // path: '/about',
     //   // name: 'about',

@@ -3,19 +3,25 @@
         <el-header>
             <HomeHeaderHeader />
         </el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
+        <el-main>
+            <router-view/>
+        </el-main>
+        <el-footer>
+            <HomeFooterFooter />
+        </el-footer>
     </el-container>
 </template>
 
 <script>
     // @ is an alias to /src
     import HomeHeaderHeader from './components/HomeHeaderHeader.vue'
+    import HomeFooterFooter from './components/HomeFooterFooter.vue'
 
     export default {
         name: 'home',
         components: {
-            HomeHeaderHeader
+            HomeHeaderHeader,
+            HomeFooterFooter
         },
         data() {
             return {
@@ -35,14 +41,15 @@
         .el-header
             width 100%
             height 100px
+            padding 0px
             background-color #ddd
         .el-main
             width 100%
-            min-height 500px
+            min-height 400px
             flex-grow 1
             background-color #eee
         .el-footer
             width 100%
-            height 100px
-            background-color #ccc
+            /*height 500px*/
+            /*background-color #ccc*/
 </style>
