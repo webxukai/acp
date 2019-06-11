@@ -70,6 +70,7 @@
             .xkwx-img
                 width 170px
                 height 170px
+                margin 10px 20px;
                 padding 5px
                 border:1px solid #999
 

@@ -45,7 +45,7 @@
             background-color #ddd
         .el-main
             width 100%
-            min-height 400px
+            min-height 390px
             flex-grow 1
             background-color #eee
         .el-footer
