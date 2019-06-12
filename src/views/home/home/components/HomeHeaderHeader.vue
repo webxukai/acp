@@ -7,9 +7,9 @@
         </router-link>
         <el-menu-item index="1"> <router-link to="/home">ACP首页</router-link> </el-menu-item>
         <el-menu-item index="2"> <router-link to="/store">ACP商城</router-link> </el-menu-item>
-        <el-menu-item index="3"> <router-link to="/community">用户社区</router-link></el-menu-item>
-        <el-menu-item index="4"> <router-link to="/dynamic">ACP动态</router-link></el-menu-item>
-        <el-submenu index="5">
+        <el-menu-item index="3" > <router-link to="/community">用户社区</router-link></el-menu-item>
+        <el-menu-item index="4" > <router-link to="/dynamic">ACP动态</router-link></el-menu-item>
+        <el-submenu index="5" >
             <template slot="title"> 全部游戏</template>
             <el-menu-item index="2-1"> <router-link to="/register">五子棋</router-link></el-menu-item>
             <el-menu-item index="2-2"> <router-link to="/register">贪吃蛇</router-link></el-menu-item>
@@ -33,6 +33,13 @@
 
             };
         },
+        methods:{
+            // handleSelect(a,b){
+            //     console.log(a)
+            //     console.log(b)
+            // },
+
+        }
     }
 </script>
 <style lang="stylus" scoped>

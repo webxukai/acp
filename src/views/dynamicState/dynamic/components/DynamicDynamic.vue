@@ -1,20 +1,21 @@
 <template>
     <div>
         DynamicDynamic
+        <VueSwiper :swipperImg ='swipperImg'/>
     </div>
 </template>
 
 <script>
-    // @ is an alias to /src
+    import VueSwiper from '../../../../components/Swiper.vue'
 
     export default {
         name: 'dynamicdynamic',
         components: {
+            VueSwiper
         },
         data() {
             return {
-                name: "",
-                psw: ""
+                swiperImg:['../../../../assets/img/swiperimg/1.png','../../../../assets/img/swiperimg/1.png','../../../../assets/img/swiperimg/1.png'],
             };
         },
     }
