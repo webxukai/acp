@@ -16,41 +16,46 @@
 
 <script>
 // @ is an alias to /src
-// import md5 from "js-md5";
-// import axios from "axios";
+import md5 from "js-md5";
+import axios from "axios";
 
 export default {
   name: 'loginlogin',
 
   data() {
     return {
-      name: "",
-      psw: ""
+      name: "zhangsan",
+      psw: "111111"
     };
   },
     methods :{
         loginSubmit() {
-            this.$router.push('home')
-            // console.log(this.name);
-            // console.log(this.psw);
-            // console.log({
-            //     account: this.name,
-            //     agentPwd: md5("agent" + this.psw)
-            // });
-            // axios
-            //     .post("http://192.168.101.123:8899/ysscale/web/agent/login/login", {
-            //         account: this.name,
-            //         agentPwd: md5("agent" + this.psw)
-            //     })
-            //     .then(res => {
-            //         console.log("cheeng");
-            //         console.log(res);
-            //         this.$router.push({ name: "Home", params: {} });
-            //     })
-            //     .catch(err => {
-            //         console.log("shibai");
-            //         console.log(err);
-            //     });
+
+            console.log(this.name);
+            console.log(this.psw);
+            console.log({
+                account: this.name,
+                agentPwd: md5("agent" + this.psw)
+            });
+            axios
+                .post("http://localhost:3000/login", {
+                    account: this.name,
+                    agentPwd: md5("agent" + this.psw)
+                })
+                                // .get("http://localhost:3000/login")
+                .then(res => {
+                    console.log("cheeng");
+                    console.log(res);
+                    if(res.data) {
+                    this.$router.push('home')
+                    } else {
+                      alert('登录失败')
+                    }
+                })
+                .catch(err => {
+                    console.log("shibai");
+                    alert(err);
+                });
         },
         noLoginSubmit(){
             this.$router.push('home')

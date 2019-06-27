@@ -41,7 +41,7 @@ export default {
   methods: {
     getMsgCode() {
       axios
-        .post("http://192.168.101.123:8899/ysscale/web/agent/login/getMsgCode", {
+        .post("http://localhost:3000/register", {
           account: this.userName,
           msgId: ''
         })
