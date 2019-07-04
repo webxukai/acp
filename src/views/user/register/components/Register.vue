@@ -1,25 +1,21 @@
 <template>
   <div class = 'wrapper'>
     <div>
-      <span>用户名</span>
-      <input class="input-item" type="text" placeholder="请输入用户名" v-model="userName">
+      <div>
+        用户名
+      </div>
+      <input placeholder="请输入用户名" />
     </div>
     <div>
-      <input class="input-item" type="text" placeholder="请输入验证码" v-model="msgCode">
-      <button class="login-button" @click="getMsgCode">短信验证码</button>
+      <div>密码</div>
+      <input placeholder="请输入秘密" />
     </div>
     <div>
-      <input class="input-item" type="password"  placeholder="请输入密码" v-model="password">
-      <input class="input-item" type="password"  placeholder="确认密码" v-model="passwordAgain">
+      <div>请确认密码</div>
+      <input placeholder="确认密码"/>
     </div>
-    <div>
-      <input class="input-item" type="text"  placeholder="请输入验证码" v-model="verificationCode">
-    </div>
-    <div class="router-wrapper">
-      <div @click="clear">清空</div>
-      <div @click="cancle">取消</div>
-    </div>
-    <button class="login-button" @click="submitRegister">提交</button>
+    <button>注册</button>
+
   </div>
 </template>
 
@@ -89,27 +85,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.wrapper
-  position relative
-  display flex
-  flex-direction column
-  justify-content start
-  width 400px
-  height 500px
-  border 1px solid #666
-  margin 0 auto
-  padding 0 10px
-  margin-top 20px
-  font-size 24px
-  .input-item
-    height 30px
-    margin 10px 0
-    padding 0 10px
-    border 1px solid #666
-  .router-wrapper
-    display flex
-    height 30px
-    margin 10px 0
-    padding 0 10px
-    justify-content space-between
+
 </style>

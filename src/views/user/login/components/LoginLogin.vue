@@ -1,26 +1,93 @@
 <template>
   <div>
-    <div class="wrapper">
-        <input class="input-item" type="text" v-model="name" placeholder="请输入用户名">
-        <input class="input-item" type="password" v-model="psw" placeholder="请输入密码">
-        <div class="router-wrapper">
-          <router-link class="router-item" to="/register">注册</router-link>
-          <router-link class="router-item" to="/forgetPassword">忘记密码</router-link>
-        </div>
+	  <div class="wrapper">
+		  <div class="header">
+			  <router-link class="logo-wrapper" to="/register">
+			  	<img class="logo" src="@/assets/logo.png" alt="">
+			  </router-link>
+		  </div>
+		  <div class="middle">
+			  <div class="middle-left">
+				  <img src="@/assets/img/cardimg/login.jpg" alt="">
+			  </div>
+			  <div class="middle-right">
+				  <div class="wrapper">
+					<div class="login-header login-flex-item">
+						<div>密码登录</div>
+						<div>
+							<router-link class="router-link" to="/register">
+							其他方式登录
+							</router-link>
+						</div>
+					</div>
+					<div class="login-flex-item">
+						<input type="text" placeholder="账号名">
+					</div>
+					<div class="login-flex-item">
+						<input type="password" placeholder="密码">
+					</div>
+					<div class="login-flex-item fogetpassword-wrapper">
+					<router-link class="router-link" to="/register">
+						忘记密码?
+					</router-link>
+					</div>
+					<button class="login-flex-item">登录</button>
+					<div class="login-flex-item regist-wrapper">
+						<div>
+							还没有账号?
+						</div>
+							<router-link class="router-link" to="/register">
+								免费注册
+							</router-link>
+					</div>
+					<div class="login-flex-item text-center">
+						用合作账号登录
+					</div>
+					<div class="login-flex-item regist-wrapper">
+						<div>
+							暂无
+						</div>
+						<div>
+							暂无
+						</div>
+						<div>
+							暂无
+						</div>
+						<div>
+							暂无
+						</div>
+					</div>
+				  </div>
 
-      <button class="login-button" @click="loginSubmit">登录</button>
-      <button class="login-button" @click="noLoginSubmit">游客登录</button>
-    </div>
+			  </div>
+		  </div>
+		  <div class="foot">
+			  <div class="foot-wrapper">
+				  <div class="flex">
+					  <div>关于我们</div>
+					  <div>商家入驻</div>
+					  <div>加入我们</div>
+					  <div>帮助中心</div>
+					  <div>手机版本</div>
+				  </div>
+				  <div>
+					  <div class="beian">
+					 	 ©2019 我爱CP网 2CP.xyz 京ICP证(暂无)号 京公网安备(正在备案中......)号
+					  </div>
+				  </div>
+			  </div>
+
+		  </div>
+	  </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import md5 from "js-md5";
 import axios from "axios";
 
 export default {
-  name: 'loginlogin',
+  name: "loginlogin",
 
   data() {
     return {
@@ -28,72 +95,121 @@ export default {
       psw: "111111"
     };
   },
-    methods :{
-        loginSubmit() {
-
-            console.log(this.name);
-            console.log(this.psw);
-            console.log({
-                account: this.name,
-                agentPwd: md5("agent" + this.psw)
-            });
-            axios
-                .post("http://localhost:3000/login", {
-                    account: this.name,
-                    agentPwd: md5("agent" + this.psw)
-                })
-                                // .get("http://localhost:3000/login")
-                .then(res => {
-                    console.log("cheeng");
-                    console.log(res);
-                    if(res.data) {
-                    this.$router.push('home')
-                    } else {
-                      alert('登录失败')
-                    }
-                })
-                .catch(err => {
-                    console.log("shibai");
-                    alert(err);
-                });
-        },
-        noLoginSubmit(){
-            this.$router.push('home')
-        }
+  methods: {
+    loginSubmit() {
+      console.log(this.name);
+      console.log(this.psw);
+      console.log({
+        account: this.name,
+        agentPwd: md5("agent" + this.psw)
+      });
+      axios
+        .post("http://localhost:3000/login", {
+          account: this.name,
+          agentPwd: md5("agent" + this.psw)
+        })
+        // .get("http://localhost:3000/login")
+        .then(res => {
+          console.log("cheeng");
+          console.log(res);
+          if (res.data) {
+            this.$router.push("home");
+          } else {
+            alert("登录失败");
+          }
+        })
+        .catch(err => {
+          console.log("shibai");
+          alert(err);
+        });
+    },
+    noLoginSubmit() {
+      this.$router.push("home");
     }
-}
+  }
+};
 </script>
 <style lang="stylus" scoped>
 .wrapper
-  position relative
-  display flex
-  flex-direction column
-  justify-content start
-  width 400px
-  height 500px
-  border 1px solid #666
-  margin 0 auto
-  padding 0 10px
-  margin-top 20px
-  font-weight: 400;
-  color: #e95098
-  font-size: 18px;
-  .input-item
-    height 30px
-    margin 10px 0
-    padding 0 10px
-    border 1px solid #666 
-	&:placeholder
-	  color #e95098
-  .router-wrapper
-    display flex
-    height 30px
-    margin 10px 0
-    padding 0 10px
-    justify-content space-between
-	.router-item
-	  color #e95098
-	.login-button
-	  color #e95098
-	  margin 10px 0
+	position relative
+	display flex
+	flex-direction column
+	justify-content space-between
+	width 80%
+	height 650px
+	margin 0 10%
+	background-color #ffffff
+	font-size 14px
+	color #666
+	.header
+		height 100px
+		// margin 40px 0
+		.logo-wrapper
+			width 70px
+			height 100px
+			.logo
+				width 100px
+				height 100px
+	.middle
+		display flex
+		height 400px
+		flex-grow 1
+		.middle-left
+			width 50%
+			img 
+				width 100%
+				height 100%
+		.middle-right
+			display flex
+			flex-direction column
+			justify-content space-between
+			width 50%
+			.wrapper 
+				width 270px
+				height 300px
+				margin 30px auto 
+				.login-flex-item
+					height 40px
+					line-height 40px
+					margin 5px 0
+				.regist-wrapper
+					display flex
+					justify-content space-between
+				.fogetpassword-wrapper
+					display flex
+					justify-content flex-end
+					
+				.login-header
+					display flex
+					justify-content space-between
+				button
+					color #ffffff
+					font-weight 600
+					background-color #e95098
+				input
+					padding 10px
+					width 250px
+					border 1px solid #666
+				.text-center
+					text-align center
+	.foot
+		height 100px
+		.foot-wrapper
+			display flex
+			flex-direction column
+			justify-content space-around
+			.flex
+				display flex
+				justify-content flex-start
+				div
+					width 100px
+					height 40px
+					margin 40px 0 0 0
+					font-size 10px
+	.router-link
+		color #e95098
+	.beian
+		font-size 10px
+
+
 </style>
