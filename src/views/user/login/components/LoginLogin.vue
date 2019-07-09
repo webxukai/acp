@@ -21,10 +21,10 @@
 						</div>
 					</div>
 					<div class="login-flex-item">
-						<input type="text" placeholder="账号名">
+						<input type="text" placeholder="账号名" v-model="name">
 					</div>
 					<div class="login-flex-item">
-						<input type="password" placeholder="密码">
+						<input type="password" placeholder="密码" v-model="psw">
 					</div>
 					<div class="login-flex-item fogetpassword-wrapper">
 					<router-link class="router-link" to="/forgetPassword">
@@ -91,8 +91,8 @@ export default {
 
   data() {
     return {
-      name: "zhangsan",
-      psw: "111111"
+      name: "",
+      psw: ""
     };
   },
   methods: {
@@ -112,7 +112,7 @@ export default {
         .then(res => {
           console.log("cheeng");
           console.log(res);
-          if (res.data) {
+          if (res.data.message.res == true) {
             this.$router.push("home");
           } else {
             alert("登录失败");

@@ -78,7 +78,7 @@ export default {
           agentPwd: md5("agent" + this.psw)
         });
         axios
-          .post("http://localhost:3000/login", {
+          .post("http://localhost:3000/register", {
             account: this.name,
             agentPwd: md5("agent" + this.psw)
           })
@@ -86,8 +86,9 @@ export default {
           .then(res => {
             console.log("cheeng");
             console.log(res);
-            if (res.data) {
-              this.$router.push("home");
+            if (res.data.message == true ) {
+              alert('注册成功')
+              this.$router.push("/");
             } else {
               alert("登录失败");
             }
