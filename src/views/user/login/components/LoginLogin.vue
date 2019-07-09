@@ -27,11 +27,11 @@
 						<input type="password" placeholder="密码">
 					</div>
 					<div class="login-flex-item fogetpassword-wrapper">
-					<router-link class="router-link" to="/register">
+					<router-link class="router-link" to="/forgetPassword">
 						忘记密码?
 					</router-link>
 					</div>
-					<button class="login-flex-item">登录</button>
+					<button class="login-flex-item" @click="loginSubmit">登录</button>
 					<div class="login-flex-item regist-wrapper">
 						<div>
 							还没有账号?
