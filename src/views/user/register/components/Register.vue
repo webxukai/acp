@@ -59,7 +59,7 @@ export default {
 
   data() {
     return {
-      name: "zhangsan",
+      name: "",
       psw: "",
       confirmPsw: ""
     };
@@ -86,7 +86,7 @@ export default {
           .then(res => {
             console.log("cheeng");
             console.log(res);
-            if (res.data.message == true ) {
+            if (res.data.message.res == true ) {
               alert('注册成功')
               this.$router.push("/");
             } else {
