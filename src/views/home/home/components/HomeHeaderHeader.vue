@@ -3,8 +3,11 @@
 
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" active-text-color = "#e95098">
         <router-link to="/home">
-            <img class="img-logo" src="../../../../assets/logo.png" />
+            <img class="img-logo" src="@/assets/logo.png" />
         </router-link>
+        <el-menu-item index="0"> <router-link to="/userMsg">
+            <img class="img-head" src="@/assets/img/cardimg/card_01.png" alt="">
+        </router-link> </el-menu-item>
         <el-menu-item index="1"> <router-link to="/home">ACP首页</router-link> </el-menu-item>
         <el-menu-item index="2"> <router-link to="/store">ACP商城</router-link> </el-menu-item>
         <el-menu-item index="3" > <router-link to="/community">用户社区</router-link></el-menu-item>
@@ -51,5 +54,9 @@
         .img-logo
             width:80px
             height:80px
+        .img-head
+            width 40px
+            height 40px
+            border-radius 50%
 
 </style>

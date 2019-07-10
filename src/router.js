@@ -10,6 +10,7 @@ import About from './views/AboutACP/about/About.vue'
 import Community from './views/community/community/Community.vue'
 import Consultation from './views/consultationService/consultation/Consultation.vue'
 import Dynamic from './views/dynamicState/dynamic/Dynamic.vue'
+import UserMsg from './views/userMsg/UserMsg.vue'
 
 import Home from './views/home/home/Home'
 
@@ -63,6 +64,11 @@ export default new Router({
           path: '/dynamic',
           name: 'dynamic',
           component: Dynamic
+        },
+        {
+          path: '/userMsg',
+          name: 'userMsg',
+          component: UserMsg
         }
       ]
     },
