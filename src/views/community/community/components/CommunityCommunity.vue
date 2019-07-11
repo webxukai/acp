@@ -12,7 +12,6 @@
             <ShareCard4 class="wrapper-share-card"/>
             <ShareCard4 class="wrapper-share-card"/>
         </div>
-        
     </div>
 </template>
 

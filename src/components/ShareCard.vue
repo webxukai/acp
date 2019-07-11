@@ -12,15 +12,15 @@
                     </div>
                     <div class="right-wrapper">
                         <div class="right-flex">
-                            <div>分享</div>
+                             <i class="iconfont icon-share"></i> 
                             <div>12</div>
                         </div>
                         <div class="right-flex">
-                            <div>评论</div>
+                            <i class="iconfont icon-pinglun"></i> 
                             <div>13</div>
                         </div>
                         <div class="right-flex">
-                            <div>点赞</div>
+                            <i class="iconfont icon-duomeitiicon-"></i> 
                             <div>16</div>
                         </div>
                     </div>
