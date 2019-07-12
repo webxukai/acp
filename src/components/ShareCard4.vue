@@ -1,31 +1,28 @@
 <template>
     <div>
         <div class="wrapper">
-            <div class="title">标题标题标题标题标题标题标题标题</div>
+            <div class="title">{{shareCard4Msg.ShareCard4Title}}</div>
             <div class="img-wrapper">
-                <img src="@/assets/img/cardimg/card_01.png" alt="">
-                <img src="@/assets/img/cardimg/card_02.png" alt="">
-                <img src="@/assets/img/cardimg/card_03.png" alt="">
-                <img src="@/assets/img/cardimg/card_04.png" alt="">
+                <img v-for="(item,index) in shareCard4Msg.ShareCard4Img " :key="index" :src="item" alt="">
             </div>
             <div class="bottom-wrapper">
                 <div class="left-wrapper">
-                    <div class="header-wrapper"><img src="@/assets/img/cardimg/card_02.png" alt=""></div>
-                    <div>作者</div>
-                    <div>7/11/ 14:28:54</div>
+                    <div class="header-wrapper"><img :src="shareCard4Msg.ShareCard4HeadImg" alt=""></div>
+                    <div>{{shareCard4Msg.ShareCard4Author}}</div>
+                    <div>{{shareCard4Msg.ShareCard4Time}}</div>
                 </div>
                 <div class="right-wrapper">
                     <div class="right-flex">
                         <i class="iconfont icon-share"></i> 
-                        <div>12</div>
+                        <div>{{shareCard4Msg.ShareCard4Share}}</div>
                     </div>
                     <div class="right-flex">
                         <i class="iconfont icon-pinglun"></i> 
-                        <div>13</div>
+                        <div>{{shareCard4Msg.ShareCard4Talk}}</div>
                     </div>
                     <div class="right-flex">
                         <i class="iconfont icon-dianzan"></i> 
-                        <div>16</div>
+                        <div>{{shareCard4Msg.ShareCard4Love}}</div>
                     </div>
                 </div>
             </div>
@@ -35,6 +32,12 @@
 <script>
     export default {
         name: 'sharecard',
+        props:{
+            shareCard4Msg:{
+                type:Object,
+                required:true
+            }
+        },
         data() {
             return {
 

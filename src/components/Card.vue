@@ -1,16 +1,21 @@
 <template>
     <div>
         <div class="wrapper">
-            <div class="img-wrapper"><img src="@/assets/img/cardimg/card_01.png" alt=""></div>
-            <div class="title-wrapper">标题标题标题标题</div>
-            <div class="content-wrapper">详细信息详细信息详细信息详细信息详细信息详细信息详细信息详细信息细信息详细信息详细信息详细信息详细信息详细信息详细信息详细信息</div>
+            <div class="img-wrapper"><img :src="cardMsg.cardImg " alt=""></div>
+            <div class="title-wrapper">{{cardMsg.cardTitle}}</div>
+            <div class="content-wrapper">{{cardMsg.cardContent}}</div>
         </div>
     </div>
 </template>
 <script>
     export default {
         name: 'card',
-        props:['swipperImg'],
+        props:{
+            cardMsg:{
+                type:Object,
+                required: true
+            }
+        },
         data() {
             return {
 
@@ -30,7 +35,7 @@
     display flex
     flex-direction column
     justify-content start
-    width 100%
+    width 300px
     height 200px
     margin 6px 4px
     padding 4px 4px
@@ -58,7 +63,7 @@
     .content-wrapper
         width 100%
         height 40px
-        line-height :40px
+        line-height 40px
         color #666
         font-size 12px
         overflow: hidden

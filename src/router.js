@@ -11,6 +11,7 @@ import Community from './views/community/community/Community.vue'
 import Consultation from './views/consultationService/consultation/Consultation.vue'
 import Dynamic from './views/dynamicState/dynamic/Dynamic.vue'
 import UserMsg from './views/userMsg/UserMsg.vue'
+import Index from './views/index/Index.vue'
 
 import Home from './views/home/home/Home'
 
@@ -39,6 +40,7 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home,
+      redirect: '/index',
       children: [
         {
           path: '/store',
@@ -69,6 +71,11 @@ export default new Router({
           path: '/userMsg',
           name: 'userMsg',
           component: UserMsg
+        },
+        {
+          path: '/index',
+          name: 'index',
+          component: Index
         }
       ]
     },

@@ -1,27 +1,27 @@
 <template>
     <div>
         <div class="wrapper">
-            <div class="img-wrapper"><img src="@/assets/img/cardimg/card_01.png" alt=""></div>
+            <div class="img-wrapper"><img :src="shareCardMsg.ShareCardImg" alt=""></div>
             <div class="content-wrapper">
-                <div class="title">标题标题标题标题标题标题标题标题</div>
+                <div class="title">{{shareCardMsg.ShareCardTitle}}</div>
                 <div class="bottom-wrapper">
                     <div class="left-wrapper">
-                        <div class="header-wrapper"><img src="@/assets/img/cardimg/card_02.png" alt=""></div>
-                        <div>作者</div>
-                        <div>7/11/ 14:28:54</div>
+                        <div class="header-wrapper"><img :src="shareCardMsg.ShareCardHeadImg" alt=""></div>
+                        <div>{{shareCardMsg.ShareCardAuthor}}</div>
+                        <div>{{shareCardMsg.ShareCardTime}}</div>
                     </div>
                     <div class="right-wrapper">
                         <div class="right-flex">
                              <i class="iconfont icon-share"></i> 
-                            <div>12</div>
+                            <div>{{shareCardMsg.ShareCardShare}}</div>
                         </div>
                         <div class="right-flex">
                             <i class="iconfont icon-pinglun"></i> 
-                            <div>13</div>
+                            <div>{{shareCardMsg.ShareCardTalk}}</div>
                         </div>
                         <div class="right-flex">
                             <i class="iconfont icon-duomeitiicon-"></i> 
-                            <div>16</div>
+                            <div>{{shareCardMsg.ShareCardLove}}</div>
                         </div>
                     </div>
                 </div>
@@ -32,6 +32,12 @@
 <script>
     export default {
         name: 'sharecard',
+        props:{
+            shareCardMsg : {
+                type: Object,
+                required:true
+            }
+        },
         data() {
             return {
 

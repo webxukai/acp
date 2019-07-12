@@ -47,7 +47,7 @@
             width 100%
             min-height 390px
             flex-grow 1
-            background-color #eee
+            background-color #fdfdfd
         .el-footer
             width 100%
             /*height 500px*/
