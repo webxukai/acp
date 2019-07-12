@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="wrapper">
+            <!-- <Alert /> -->
             <TitleMain :msg="titleMain[0]"/>
             <div class="card-wrapper">
                 <Card v-for="item in cardMsg" :key="item.cardId" :cardMsg='item'/>
@@ -18,13 +19,16 @@ import TitleMain from '@/components/TitleMain'
 import Card from '@/components/Card'
 import ShareCard from '@/components/ShareCard'
 import ShareCard4 from '@/components/ShareCard4'
+
+import Alert from '@/components/Alert'
     export default {
         name: 'indexindex',
         components: {
             TitleMain,
             Card,
             ShareCard,
-            ShareCard4
+            ShareCard4,
+            Alert
         },
         data() {
             return {
