@@ -85,6 +85,7 @@
 <script>
 import md5 from "js-md5";
 import axios from "axios";
+import { setTimeout } from 'timers';
 
 export default {
   name: "loginlogin",
@@ -113,14 +114,28 @@ export default {
           console.log("cheeng");
           console.log(res);
           if (res.data.message.res == true) {
+	          this.$notify({
+		  title: '登录成功',
+        	duration: '1000',
+		  type: 'success',
+		});
+		setTimeout(() => {
             this.$router.push("home");
+
+		},1000)
           } else {
-            alert("登录失败");
+	          this.$notify.error({
+		  title: '登录失败',
+        	duration: '1000',
+		});
           }
         })
         .catch(err => {
-          console.log("shibai");
-          alert(err);
+		  console.log("shibai");
+          this.$notify.error({
+		  title: err,
+        	duration: '1000',
+		});
         });
     },
     noLoginSubmit() {

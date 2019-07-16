@@ -19,5 +19,8 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 new Vue({
   router,
   store,
+
+  mounted: function() {
+  },
   render: h => h(App)
 }).$mount('#app')

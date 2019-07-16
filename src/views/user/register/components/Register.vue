@@ -41,7 +41,7 @@
             <div>手机版本</div>
           </div>
           <div>
-            <div class="beian">©2019 我爱CP网 2CP.xyz 京ICP证(暂无)号 京公网安备(正在备案中......)号</div>
+            <div class="beian">©2019 我爱CP网 2CP.xyz 京ICP证(暂无)号 京公网安备(苏ICP备19036661号)号</div>
           </div>
         </div>
       </div>
@@ -87,15 +87,28 @@ export default {
             console.log("cheeng");
             console.log(res);
             if (res.data.message.res == true ) {
-              alert('注册成功')
+              	          this.$notify({
+                title: '注册成功',
+                    duration: '1000',
+                type: 'success',
+              });
+              setTimeout(() => {
               this.$router.push("/");
+                
+              }, 1000);
             } else {
-              alert("登录失败");
+              	          this.$notify.error({
+		  title: '注册失败',
+        	duration: '1000',
+		});
             }
           })
           .catch(err => {
             console.log("shibai");
-            alert(err);
+             this.$notify.error({
+		  title: err,
+        	duration: '1000',
+		});
           });
       }
     },
@@ -106,9 +119,16 @@ export default {
   watch: {
     confirmPsw() {
       if (this.psw !== this.confirmPsw) {
-        console.log("两次密码不同");
+      this.$notify.info({
+          title: '两次密码不同',
+          duration: 1000
+        });
       } else {
-        console.log("相同");
+        this.$notify({
+          title: '两次密码相同',
+          type: 'success',
+          duration: 1000
+        });
       }
     }
   }

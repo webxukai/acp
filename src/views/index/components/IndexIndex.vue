@@ -2,6 +2,15 @@
     <div>
         <div class="wrapper">
             <!-- <Alert /> -->
+              <swiper class="swiper-wrapper" :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+                <swiper-slide><img src="@/assets/img/cardimg/17.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="@/assets/img/cardimg/12.jpg" alt=""></swiper-slide>
+                <swiper-slide><img src="@/assets/img/cardimg/13.jpg" alt=""></swiper-slide>
+                <div class="swiper-pagination"  slot="pagination"></div>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+                <div class="swiper-scrollbar"   slot="scrollbar"></div>
+            </swiper>
             <TitleMain :msg="titleMain[0]"/>
             <div class="card-wrapper">
                 <Card v-for="item in cardMsg" :key="item.cardId" :cardMsg='item'/>
@@ -32,6 +41,15 @@ import Alert from '@/components/Alert'
         },
         data() {
             return {
+            swiperOption: {
+                 loop: true, // 循环模式选项
+          // some swiper options/callbacks
+          // 所有的参数同 swiper 官方 api 参数
+          // ...
+                },
+                callback () {
+                    console.log('callBack')
+                },
                 titleMain:[{
                     titleId:'001',
                     text:'热门推荐',
@@ -149,8 +167,6 @@ import Alert from '@/components/Alert'
 
         },
         mounted() {
-            // current swiper instance
-
         }
     }
 </script>
@@ -160,6 +176,12 @@ import Alert from '@/components/Alert'
     flex-direction column
     width 73%
     margin 0 auto
+    .swiper-wrapper
+        width 100%
+        height 300px
+        img     
+            width 100%
+            height 100%
     .card-wrapper
         display flex
         flex-wrap wrap
