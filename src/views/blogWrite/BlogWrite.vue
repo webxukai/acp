@@ -1,14 +1,14 @@
 <template>
-    <div>
-
+    <div class="wrapper">
+        <BlogWriteBlogWrite />
     </div>
 </template>
 <script>
-// import Title from '@/components/Title'
+import BlogWriteBlogWrite from './components/BlogWriteBlogWrite.vue'
     export default {
-        name: 'text',
+        name: 'blogwrite',
         components: {
-
+            BlogWriteBlogWrite
         },
         data() {
             return {
@@ -24,5 +24,7 @@
     }
 </script>
 <style lang="stylus" scoped>
-
+.wrapper
+    width 60%
+    margin 0 auto
 </style>

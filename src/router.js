@@ -13,6 +13,8 @@ import Dynamic from './views/dynamicState/dynamic/Dynamic.vue'
 import UserMsg from './views/userMsg/UserMsg.vue'
 import Index from './views/index/Index.vue'
 
+import BlogWrite from './views/blogWrite/BlogWrite.vue'
+
 import Home from './views/home/home/Home'
 
 Vue.use(Router)
@@ -76,6 +78,11 @@ export default new Router({
           path: '/index',
           name: 'index',
           component: Index
+        },
+        {
+          path: '/blogWrite',
+          name: 'blogWrite',
+          component: BlogWrite
         }
       ]
     },
