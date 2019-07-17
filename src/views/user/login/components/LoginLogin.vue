@@ -105,11 +105,11 @@ export default {
         agentPwd: md5("agent" + this.psw)
       });
       axios
-        .post("http://localhost:3000/login", {
+        .post("http://129.211.47.103/login", {
           account: this.name,
           agentPwd: md5("agent" + this.psw)
         })
-        // .get("http://localhost:3000/login")
+        // .get("http://129.211.47.103/login")
         .then(res => {
           console.log("cheeng");
           console.log(res);
