@@ -72,7 +72,7 @@
 				  </div>
 				  <div>
 					  <div class="beian">
-					 	 ©2019 我爱CP网 2CP.xyz 京ICP证(暂无)号 京公网安备(正在备案中......)号
+					 	 ©2019 我爱CP网 2cp.xyz 苏ICP备19036661号
 					  </div>
 				  </div>
 			  </div>
