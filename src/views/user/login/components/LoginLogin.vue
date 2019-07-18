@@ -84,7 +84,6 @@
 
 <script>
 import md5 from "js-md5";
-import axios from "axios";
 import { setTimeout } from 'timers';
 
 export default {
@@ -104,12 +103,11 @@ export default {
         account: this.name,
         agentPwd: md5("agent" + this.psw)
       });
-      axios
+      this.$http
         .post("http://129.211.47.103/login", {
           account: this.name,
           agentPwd: md5("agent" + this.psw)
         })
-        // .get("http://129.211.47.103/login")
         .then(res => {
           console.log("cheeng");
           console.log(res);
@@ -119,9 +117,11 @@ export default {
         	duration: '1000',
 		  type: 'success',
 		});
+		this.$store.dispatch('setUserInfo',res.data.message);
+		sessionStorage.setItem("userName",res.data.message.userName)
+		sessionStorage.setItem("userId",res.data.message.userId)
 		setTimeout(() => {
             this.$router.push("home");
-
 		},1000)
           } else {
 	          this.$notify.error({

@@ -3,19 +3,19 @@
         <div class="wrapper">
             <div class="header">
                 <div class="header-left">
-                    <input class="blog-title-input" type="text" placeholder="请输入标题..." :key="blog-title-input">
+                    <input class="blog-title-input" type="text" v-model="blogTitle" placeholder="请输入标题..." :key="'blog-title-input'">
                 </div>
                 <div class="header-right">
                     <div>
                         <router-link class="router-link" to="/blogWrite">添加至草稿</router-link>
                     </div>
                     <div>加图片</div>
-                    <div>发布</div>
+                    <div @click="sendBlog">发布</div>
                 </div>
 
             </div>
             <div class="content">
-                <textarea class="content-textarea" placeholder = "请输入内容..." autocorrect="off" autocapitalize="off" spellcheck="false" >
+                <textarea class="content-textarea" v-model ="blogcontent"  placeholder = "请输入内容..." autocorrect="off" autocapitalize="off" spellcheck="false" >
                 </textarea>
             </div>
             <div>
@@ -34,7 +34,51 @@
         },
         data() {
             return {
+                blogTitle:'',
+                blogcontent:'',
+                userId:'',
 
+            }
+        },
+        methods: {
+            sendBlog () {
+                let blogTitle = this.blogTitle
+                let blogcontent = this.blogcontent
+                let userId = sessionStorage.userId
+                console.log({
+           blogTitle:blogTitle,
+          blogcontent:blogcontent,
+          userId:userId
+        })
+                this.$http.post("http://129.211.47.103/blogWrite", {
+           blogTitle:blogTitle,
+          blogcontent:blogcontent,
+          userId:userId
+        })
+        .then(res => {
+          console.log("cheeng");
+          console.log(res);
+          if (res.data.message.res == true) {
+	          this.$notify({
+		  title: '发布成功',
+        	duration: '1000',
+		  type: 'success',
+		});
+
+          } else {
+	          this.$notify.error({
+		  title: '发布失败',
+        	duration: '1000',
+		});
+          }
+        })
+        .catch(err => {
+		  console.log("shibai");
+          this.$notify.error({
+		  title: err,
+        	duration: '1000',
+		});
+        });
             }
         },
         computed: {

@@ -42,7 +42,8 @@
 
 <script>
 import axios from "axios";
-import qs from "qs";
+
+import { mapActions, mapGetters, mapState } from 'vuex';
 export default {
   name: "userMsguserMsg",
   components: {},
@@ -101,27 +102,19 @@ export default {
           alert(err);
         });
 
-      //   xhr.open("post", "http://localhost:3000/login");
-      //   //回调
-      //   xhr.onreadystatechange = function() {
-      //     if (xhr.readyState == 4 && xhr.status == 200) {
-      //       document.querySelector("#callback").innerText = xhr.responseText;
-      //     }
-      //   };
-      //   //获取上传的进度
-      //   xhr.upload.onprogress = function(event) {
-      //     if (event.lengthComputable) {
-      //       var percent = (event.loaded / event.total) * 100;
-      //       document.querySelector("#progress .progress-item").style.width =
-      //         percent + "%";
-      //     }
-      //   };
-      //   //将formdata上传
-      //   xhr.send(formdata);
     },
     bindHead() {
       console.log(111);
-    }
+    },
+  },
+  computed:{
+            // ...mapState({
+            //     name: state => state.userInfo.userName ,
+            // }),
+  },
+  mounted(){
+    // this.name = this.$store.state.userInfo.userName
+     this.name = sessionStorage.userName
   }
 };
 </script>

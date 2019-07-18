@@ -51,7 +51,6 @@
 
 <script>
 import md5 from "js-md5";
-import axios from "axios";
 import { constants } from "crypto";
 
 export default {
@@ -77,7 +76,7 @@ export default {
           account: this.name,
           agentPwd: md5("agent" + this.psw)
         });
-        axios
+        this.$http
           .post("http://129.211.47.103/register", {
             account: this.name,
             agentPwd: md5("agent" + this.psw)
