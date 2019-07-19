@@ -63,7 +63,12 @@
 		  title: '发布成功',
         	duration: '1000',
 		  type: 'success',
-		});
+        });
+        this.blogTitle = ''
+        this.blogcontent = ''
+        setTimeout(() => {
+            this.$router.push('dynamic')
+        }, 1000);
 
           } else {
 	          this.$notify.error({
@@ -118,6 +123,7 @@
             text-align center
             div
                 margin 0 10px
+                cursor pointer
     .content
         margin 10px 0
         width 100%

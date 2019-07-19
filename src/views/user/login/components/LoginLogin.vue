@@ -31,7 +31,10 @@
 						忘记密码?
 					</router-link>
 					</div>
-					<button class="login-flex-item" @click="loginSubmit">登录</button>
+					<div class="login-flex-item">
+						<button class="login-flex-item-button" @click="loginSubmit">登录</button>
+
+					</div>
 					<div class="login-flex-item regist-wrapper">
 						<div>
 							还没有账号?
@@ -187,6 +190,10 @@ export default {
 					height 40px
 					line-height 40px
 					margin 5px 0
+					.login-flex-item-button
+						width 100%
+						height 100%
+						cursor:pointer
 				.regist-wrapper
 					display flex
 					justify-content space-between
