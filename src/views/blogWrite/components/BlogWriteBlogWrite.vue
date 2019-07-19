@@ -45,15 +45,15 @@
                 let blogTitle = this.blogTitle
                 let blogcontent = this.blogcontent
                 let userId = sessionStorage.userId
-                console.log({
+        this.$http.post("http://129.211.47.103/blogWrite", {
            blogTitle:blogTitle,
           blogcontent:blogcontent,
-          userId:userId
-        })
-                this.$http.post("http://129.211.47.103/blogWrite", {
-           blogTitle:blogTitle,
-          blogcontent:blogcontent,
-          userId:userId
+          userId:userId,
+          blogLove:0,
+          blogTranspond:0,
+          blogVisit:0,
+          blogComment:0,
+          blogTime: new Date().getTime()
         })
         .then(res => {
           console.log("cheeng");

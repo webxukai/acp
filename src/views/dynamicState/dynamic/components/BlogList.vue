@@ -9,20 +9,20 @@
                     <div class="left-wrapper">
                         <div class="header-wrapper"><img :src="blogList.ShareCardHeadImg" alt=""></div>
                         <div>{{blogList.userId}}</div>
-                        <div>{{blogList.ShareCardTime}}</div>
+                        <div>{{blogList.blogTime | moment("MM月DD号HH点")}}</div>
                     </div>
                     <div class="right-wrapper">
                         <div class="right-flex">
                              <i class="iconfont icon-share"></i> 
-                            <div>{{blogList.ShareCardShare}}</div>
+                            <div>{{blogList.blogTranspond}}</div>
                         </div>
                         <div class="right-flex">
                             <i class="iconfont icon-pinglun"></i> 
-                            <div>{{blogList.ShareCardTalk}}</div>
+                            <div>{{blogList.blogComment}}</div>
                         </div>
                         <div class="right-flex">
                             <i class="iconfont icon-duomeitiicon-"></i> 
-                            <div>{{blogList.ShareCardLove}}</div>
+                            <div>{{blogList.blogLove}}</div>
                         </div>
                     </div>
                 </div>

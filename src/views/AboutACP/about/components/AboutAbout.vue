@@ -7,6 +7,7 @@
         <h2>而是我会写什么游戏</h2>
         <h2>欢迎大佬提供Vue小游戏代码</h2>
         <div>#e95098;</div>
+        <div>{{ new Date() | moment("MM月DD号HH点") }}</div>
     </div>
 </template>
 

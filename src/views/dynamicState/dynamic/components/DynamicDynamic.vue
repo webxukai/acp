@@ -3,7 +3,6 @@
       <div class="wrapper">
         <BlogList v-for="(item) in blogList" :key="item.blogId" :blogList = 'item'/>
       </div>
-    <!-- <div>{{datefmt('YYYY-MM-DD HH:mm:ss'}}</div> -->
   </div>
 </template>
 
@@ -22,7 +21,6 @@ export default {
   },
   methods: {
     getBlogList() {
-      console.log(111);
       this.$http
         .post("http://129.211.47.103/getBlogList")
         .then(res => {
@@ -30,11 +28,11 @@ export default {
               let results = res.data.message.results
               this.blogList = results.reverse()
               console.log(results)
-            this.$notify({
-              title: "获取博客列表成功",
-              duration: "1000",
-              type: "success"
-            });
+            // this.$notify({
+            //   title: "获取博客列表成功",
+            //   duration: "1000",
+            //   type: "success"
+            // });
           } else {
             this.$notify.error({
               title: "获取博客列表失败",
@@ -43,7 +41,6 @@ export default {
           }
         })
         .catch(err => {
-          console.log("shibai");
           this.$notify.error({
             title: err,
             duration: "1000"
