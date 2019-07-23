@@ -31,6 +31,7 @@
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper
     width 100%
     height 40px
@@ -43,7 +44,7 @@
     border-bottom 1px solid #b5b5bb
     .title-text
         font-size 24px
-        color #e95098
+        color $ztColor
         margin 0 20px
     .hort
         display flex

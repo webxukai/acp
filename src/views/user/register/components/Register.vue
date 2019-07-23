@@ -134,6 +134,7 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper {
   position: relative;
   display: flex;
@@ -205,7 +206,7 @@ export default {
         button {
           color: #ffffff;
           font-weight: 600;
-          background-color: #e95098;
+          background-color: $ztColor;
         }
 
         input {
@@ -244,7 +245,7 @@ export default {
   }
 
   .router-link {
-    color: #e95098;
+    color: $ztColor;
   }
 
   .beian {

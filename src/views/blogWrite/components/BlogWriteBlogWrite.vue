@@ -95,6 +95,7 @@
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper
     width 100%
     min-height 100px
@@ -116,7 +117,7 @@
         .header-right
             display flex
             justify-content flex-end
-            color #e95098
+            color $ztColor
             font-size 16px
             font-weight 600
             line-height 60px

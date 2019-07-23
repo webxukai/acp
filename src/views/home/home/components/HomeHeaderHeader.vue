@@ -1,7 +1,7 @@
 <template>
 
 
-    <el-menu  class="el-menu-demo" mode="horizontal" active-text-color = "#e95098">
+    <el-menu  class="el-menu-demo" mode="horizontal" active-text-color = "$ztColor">
         <router-link to="/home">
             <img class="img-logo" src="@/assets/logo.png" />
         </router-link>

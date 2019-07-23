@@ -34,12 +34,13 @@ import ShareCard4 from '@/components/ShareCard4'
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper 
     display flex
     justify-content space-around
     flex-wrap wrap
     width 80%
-    border 1px solid #e95098
+    border 1px solid $ztColor
     margin 10px auto 
     .wrapper-item
         margin 6px 16px

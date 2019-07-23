@@ -51,13 +51,14 @@
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
     .wrapper
         display flex
         justify-content space-around
         .wrapper-item
             .title
                 font-weight: 400;
-                color: #e95098
+                color: $ztColor
                 font-size: 18px;
                 margin: 10px 20px;
             .text

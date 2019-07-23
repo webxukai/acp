@@ -38,7 +38,7 @@
     padding 10px
     border-radius 10px
     background-color #999
-    border 2px solid #e95098
+    border 2px solid $ztColor
     color #ffffff
     opacity 0.8
     z-index 99999

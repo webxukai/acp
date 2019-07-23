@@ -61,15 +61,15 @@ export default {
       console.log(222);
       console.log(this.$refs.file.files[0]);
       let file = this.$refs.file.files[0];
-      console.log(file);
+      // console.log(file);
 
       //创建formdata对象
       var form = new FormData();
       form.append("file", file);
       //创建xhr，使用ajax进行文件上传
       //   var xhr = new XMLHttpRequest();
-      console.log(form.get("file"));
-      console.log(form);
+      // console.log(form.get("file"));
+      // console.log(form);
       //   const instance = axios.create({
       //     withCredentials: true,
       //     headers: {
@@ -79,7 +79,7 @@ export default {
 
       axios
         .post(
-          "http://localhost:3000/img",
+          "http://129.211.47.103/img",
             form
           ,
           {
@@ -119,6 +119,7 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -138,7 +139,7 @@ export default {
       display: flex;
       justify-content: space-between;
       margin: 0px 160px;
-      border-bottom: 2px solid #e95098;
+      border-bottom: 2px solid $ztColor;
       width: 50%;
       height: 40px;
       line-height: 40px;

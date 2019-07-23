@@ -31,6 +31,7 @@
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper
     display flex
     flex-direction column
@@ -42,7 +43,7 @@
     border 1px solid rgba(255,255,255,0)
     border-bottom 1px solid #b5b5bb
     &:hover
-        border 1px solid #e95098
+        border 1px solid $ztColor
         cursor:pointer;
     .img-wrapper
         width 100%
@@ -55,7 +56,7 @@
         height 40px
         font-weight: 600
         line-height :40px
-        color: #e95098
+        color: $ztColor
         font-size: 18px
         overflow: hidden;
         text-overflow:ellipsis;

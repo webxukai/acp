@@ -148,11 +148,14 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
+
 .wrapper
 	position relative
-	display flex
-	flex-direction column
-	justify-content space-between
+	flexCB()
+	// display flex
+	// flex-direction column
+	// justify-content space-between
 	width 80%
 	height 650px
 	margin 0 10%
@@ -207,7 +210,7 @@ export default {
 				button
 					color #ffffff
 					font-weight 600
-					background-color #e95098
+					background-color $ztColor
 				input
 					padding 10px
 					width 250px
@@ -229,7 +232,7 @@ export default {
 					margin 40px 0 0 0
 					font-size 10px
 	.router-link
-		color #e95098
+		color $ztColor
 	.beian
 		font-size 10px
 
