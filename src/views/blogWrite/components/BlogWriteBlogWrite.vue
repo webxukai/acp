@@ -99,11 +99,9 @@
 .wrapper
     width 100%
     min-height 100px
-    display flex
-    flex-direction column
+    flexC()
     .header
-        display flex
-        justify-content space-between
+        flexB()
         margin 10px 0
         width 100%
         height 60px
@@ -115,8 +113,7 @@
             padding 0 10px
             line-height 60px
         .header-right
-            display flex
-            justify-content flex-end
+            flexE()
             color $ztColor
             font-size 16px
             font-weight 600

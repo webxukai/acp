@@ -53,8 +53,7 @@
 <style lang="stylus" scoped>
 @import '~@/assets/styles/com.styl';
     .wrapper
-        display flex
-        justify-content space-around
+        flexA()
         .wrapper-item
             .title
                 font-weight: 400;
@@ -62,9 +61,7 @@
                 font-size: 18px;
                 margin: 10px 20px;
             .text
-                display flex
-                flex-direction column
-                justify-content space-around
+                flexCA()
                 color: #999;
                 .text-item
                     padding 5px 10px

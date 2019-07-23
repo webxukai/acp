@@ -137,9 +137,7 @@ export default {
 @import '~@/assets/styles/com.styl';
 .wrapper {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flexCB()
   width: 80%;
   height: 650px;
   margin: 0 10%;
@@ -177,9 +175,7 @@ export default {
     }
 
     .middle-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flexCB()
       width: 50%;
 
       .wrapper {
@@ -194,13 +190,11 @@ export default {
         }
 
         .regist-wrapper {
-          display: flex;
-          justify-content: space-between;
+          flexB()
         }
 
         .login-header {
-          display: flex;
-          justify-content: space-between;
+          flexB()
         }
 
         button {
@@ -226,14 +220,9 @@ export default {
     height: 100px;
 
     .foot-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-
+      flexCA()
       .flex {
-        display: flex;
-        justify-content: flex-start;
-
+        flexS()
         div {
           width: 100px;
           height: 40px;

@@ -171,9 +171,9 @@ import Alert from '@/components/Alert'
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
 .wrapper
-    display flex
-    flex-direction column
+    flexC()
     width 73%
     margin 0 auto
     .swiper-wrapper
@@ -183,7 +183,7 @@ import Alert from '@/components/Alert'
             width 100%
             height 100%
     .card-wrapper
-        display flex
+        flex()
         flex-wrap wrap
 
 </style>

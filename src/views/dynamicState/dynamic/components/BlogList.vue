@@ -51,8 +51,7 @@
 <style lang="stylus" scoped>
 @import '~@/assets/styles/com.styl';
 .wrapper
-    display flex
-    justify-content space-between 
+    flexB()
     width 100%
     height 120px
     margin 6px 4px
@@ -69,9 +68,7 @@
             width 100%
             height 100%
     .content-wrapper
-        display flex
-        flex-direction column
-        justify-content space-between
+        flexCB()
         width 70%
         height 120px
         .title
@@ -81,20 +78,15 @@
             line-height :20px
             color: $ztColor
             font-size: 18px
-            overflow: hidden;
-            text-overflow:ellipsis;
-            white-space: nowrap;
+            dian3()
         .blogDescription
             width 100%
             height 20px
             line-height :20px
             color: #666
-            overflow: hidden;
-            text-overflow:ellipsis;
-            white-space: nowrap;
+            dian3()
         .bottom-wrapper
-            display flex
-            justify-content space-between
+            flexB()
             width 100%
             height 20px
             line-height :20px
@@ -113,9 +105,9 @@
                         height 100%
                         border-radius 50%
             .right-wrapper
-                display flex
+                flex()
                 .right-flex
-                    display flex
+                    flexD()
                     margin 0 10px
                     div
                         padding 0 2px

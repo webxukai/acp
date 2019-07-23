@@ -153,9 +153,6 @@ export default {
 .wrapper
 	position relative
 	flexCB()
-	// display flex
-	// flex-direction column
-	// justify-content space-between
 	width 80%
 	height 650px
 	margin 0 10%
@@ -172,7 +169,7 @@ export default {
 				width 100px
 				height 100px
 	.middle
-		display flex
+		flex()
 		height 400px
 		flex-grow 1
 		.middle-left
@@ -181,9 +178,7 @@ export default {
 				width 100%
 				height 100%
 		.middle-right
-			display flex
-			flex-direction column
-			justify-content space-between
+			flexCB()
 			width 50%
 			.wrapper 
 				width 270px
@@ -198,15 +193,13 @@ export default {
 						height 100%
 						cursor:pointer
 				.regist-wrapper
-					display flex
-					justify-content space-between
+					flexB()
 				.fogetpassword-wrapper
 					display flex
 					justify-content flex-end
 					
 				.login-header
-					display flex
-					justify-content space-between
+					flexB()
 				button
 					color #ffffff
 					font-weight 600
@@ -220,12 +213,9 @@ export default {
 	.foot
 		height 100px
 		.foot-wrapper
-			display flex
-			flex-direction column
-			justify-content space-around
+			flexCA()
 			.flex
-				display flex
-				justify-content flex-start
+				flexS()
 				div
 					width 100px
 					height 40px

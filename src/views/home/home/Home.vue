@@ -31,10 +31,9 @@
     }
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/styles/com.styl';
     .el-container
-        display flex
-        flex-direction column
-        justify-content space-between
+        flexCB()
         width 100%
         height 100%
         color aqua

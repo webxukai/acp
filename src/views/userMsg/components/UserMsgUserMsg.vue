@@ -121,23 +121,19 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/com.styl';
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flexCS()
   width: 100%;
   height: 100%;
   color: #666;
 
   // border 1px solid black
   .wrapper-item {
-    display: flex;
-    justify-content: space-between;
+    flexB()
     margin: 10px 0px;
 
     // border 1px solid black
     .wrapper-item-item {
-      display: flex;
-      justify-content: space-between;
+      flexB()
       margin: 0px 160px;
       border-bottom: 2px solid $ztColor;
       width: 50%;
