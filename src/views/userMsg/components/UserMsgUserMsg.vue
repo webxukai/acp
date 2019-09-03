@@ -79,7 +79,8 @@ export default {
 
       axios
         .post(
-          "http://129.211.47.103/img",
+          // "http://129.211.47.103/img",
+          "http://129.211.47.103/profile",
             form
           ,
           {

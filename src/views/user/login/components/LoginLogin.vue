@@ -182,7 +182,7 @@ export default {
 			width 50%
 			.wrapper 
 				width 270px
-				height 300px
+				height 600px
 				margin 30px auto 
 				.login-flex-item
 					height 40px
